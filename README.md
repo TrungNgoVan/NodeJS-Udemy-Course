@@ -1,2 +1,2 @@
 # NodeJS-Udemy-Course
-Learn Nodejs in Udeme course
+Learn Nodejs on Udemy
