@@ -1,0 +1,17 @@
+{
+  "name": "NodeJS-Udemy-Course",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TrungNgoVan/NodeJS-Udemy-Course.git",
+  "author": "Ngô Văn Trung <Trung2601.it@gmail.com>",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.22"
+  }
+}
