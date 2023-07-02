@@ -14,6 +14,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(adminRouter);
 app.use(shopRouter);
 
+// Handle 404 page 
+app.use((req, res, next) => {
+    res.status = 404;
+    res.send('<h1>Page not found</h1>')
+})
+
 app.listen(3000, () => {
     console.log('http://localhost:3000');
 });
