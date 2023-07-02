@@ -11,8 +11,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(adminRouter);
-app.use(shopRouter);
+app.use('/admin', adminRouter);
+app.use('/', shopRouter);
 
 // Handle 404 page 
 app.use((req, res, next) => {
