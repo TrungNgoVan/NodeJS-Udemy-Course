@@ -2,8 +2,7 @@
 const adminRouter = require('./routes/adminRouter');
 const shopRouter = require('./routes/shopRouter');
 
-const http = require('http');
-const fs = require('fs');
+const path = require('path');
 const bodyParser = require('body-parser');
 
 const express = require('express');
@@ -17,8 +16,8 @@ app.use('/', shopRouter);
 // Handle 404 page 
 app.use((req, res, next) => {
     res.status = 404;
-    res.send('<h1>Page not found</h1>')
-})
+    res.send('Page Not Found');
+});
 
 app.listen(3000, () => {
     console.log('http://localhost:3000');
