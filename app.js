@@ -16,7 +16,7 @@ app.use('/', shopRouter);
 // Handle 404 page 
 app.use((req, res, next) => {
     res.status = 404;
-    res.send('Page Not Found');
+    res.sendFile(path.join(__dirname, 'views', '404.html'));
 });
 
 app.listen(3000, () => {
