@@ -1,5 +1,4 @@
 'use strict'
-
 const Product = require('../models/productModel');
 
 const addProduct = (req, res, next) => {
@@ -12,18 +11,12 @@ const addProduct = (req, res, next) => {
     });
 };
 
-const postProduct = (req, res, next) => {
-    const product = new Product(req.body.title);
-    product.save();
-    res.redirect('/');
-};
-
-const getProducts = (req, res, next) => {
+const checkProduct = (req, res, next) => {
     Product.fetchAll((products) => {
-        res.render('shop/index', {
+        res.render('admin/products', {
             prods: products,
-            pageTitle: 'Shop',
-            path: '/',
+            pageTitle: 'Admin products',
+            path: '/admin/products',
             hasProducts: products.length > 0,
             activeShop: true,
             productCSS: true
@@ -31,10 +24,14 @@ const getProducts = (req, res, next) => {
     });
 }
 
+const postProduct = (req, res, next) => {
+    const product = new Product(req.body.title);
+    product.save();
+    res.redirect('/');
+};
+
 module.exports = {
     addProduct,
-    postProduct,
-    getProducts
+    checkProduct,
+    postProduct
 }
-
-
