@@ -132,3 +132,4 @@ dist
 # file local
 yarn.lock
 practice.js
+.DS_Store
