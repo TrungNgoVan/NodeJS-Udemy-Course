@@ -1,5 +1,7 @@
 'use strict'
-const products = [];
+
+const Product = require('../models/productModel');
+
 
 const addProduct = (req, res, next) => {
     res.render('add-product', {
@@ -12,11 +14,13 @@ const addProduct = (req, res, next) => {
 };
 
 const postProduct = (req, res, next) => {
-    products.push({ title: req.body.title });
+    const product = new Product(req.body.title);
+    product.save();
     res.redirect('/');
 };
 
-const getProduct = (req, res, next) => {
+const getProducts = (req, res, next) => {
+    const products = Product.fetchAll();
     res.render('shop', {
         prods: products,
         pageTitle: 'Shop',
@@ -30,7 +34,7 @@ const getProduct = (req, res, next) => {
 module.exports = {
     addProduct,
     postProduct,
-    getProduct
+    getProducts
 }
 
 
