@@ -22,15 +22,6 @@ class Product {
 
     save() {
         try {
-            // const fileResult = fs.readFileSync(pathData);
-            // let products = [];
-            // if (fileResult.length != 0) {
-            //     products = JSON.parse(fileResult);
-            // }
-            // products.push(this);
-            // fs.writeFileSync(pathData, JSON.stringify(products), (err) => {
-            //     console.log(err);
-            // })
             getProductsFromFile(products => {
                 products.push(this);
                 fs.writeFileSync(pathData, JSON.stringify(products), (err) => {
