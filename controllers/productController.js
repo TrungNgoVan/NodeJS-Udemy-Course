@@ -2,7 +2,6 @@
 
 const Product = require('../models/productModel');
 
-
 const addProduct = (req, res, next) => {
     res.render('add-product', {
         pageTitle: 'Add Product',
