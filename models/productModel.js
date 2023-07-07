@@ -27,15 +27,14 @@ class Product {
         }
     }
 
-    static fetchAll() {
+    static fetchAll(cb) {
         const pathData = path.join(rootPath, 'data', 'product.json');
         try {
             const fileContent = fs.readFileSync(pathData);
-            const products = fileContent.length ? JSON.parse(fileContent) : [];
-            return products;
+            cb(fileContent.length ? JSON.parse(fileContent) : []);
         } catch (err) {
             console.log('Error:', err);
-            return [];
+            cb([]);
         }
     }
 }
