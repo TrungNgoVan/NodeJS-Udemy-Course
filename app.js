@@ -10,9 +10,16 @@ app.set('views', 'views');
 
 const adminRoutes = require('./routes/adminRouter');
 const shopRoutes = require('./routes/shopRouter');
+// const errorController = require('./controllers/errorController');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Set local path
+app.use((req, res, next) => {
+    res.locals.path = req.path;
+    next();
+});
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
