@@ -130,5 +130,5 @@ dist
 .pnp.*
 
 # file local
-
+yarn.lock
 practice.js
